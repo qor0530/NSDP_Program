@@ -6,8 +6,8 @@ import threading
 import time
 import psutil
 import os
-from datetime import date # 날짜 확인을 위해 추가
-from utils import load_config, save_config # save_config 추가
+from datetime import date
+from utils import load_config, save_config, resource_path
 from ui_settings import SettingsWindow
 from ui_lock_screen import LockScreenApp
 
@@ -26,15 +26,13 @@ class AppController:
             self.settings_window_instance = SettingsWindow(self.root)
 
     def start_lockdown(self):
-        # ▼▼▼ 일일 잠금 해제 확인 로직 추가 ▼▼▼
         config = load_config()
         if config.get("daily_unlock_enabled", False):
             today_str = str(date.today())
             if config.get("last_completion_date") == today_str:
                 print("[시스템] 오늘은 이미 목표를 달성했습니다. 잠금을 시작하지 않습니다.")
                 return
-        # ▲▲▲ 일일 잠금 해제 확인 로직 추가 ▲▲▲
-
+                
         if self.lock_screen_instance and self.lock_screen_instance.root.winfo_exists():
             return
         
@@ -47,7 +45,9 @@ class AppController:
         if not blocked_apps_paths:
             print("[감시] 감시할 앱이 없습니다.")
             return
+            
         print(f"[감시] 다음 앱들을 감시합니다: {blocked_apps_paths}")
+        
         while not self.stop_monitoring.is_set():
             for proc in psutil.process_iter(['exe']):
                 try:
@@ -64,14 +64,13 @@ class AppController:
         print("[감시] 감시 스레드를 종료합니다.")
 
     def start_monitoring_thread(self):
-        # ▼▼▼ 프로그램 시작 시 일일 잠금 해제 확인 ▼▼▼
         config = load_config()
         if config.get("daily_unlock_enabled", False):
             today_str = str(date.today())
             if config.get("last_completion_date") == today_str:
                 print("[시스템] 오늘은 이미 목표를 달성했습니다. 자동 감시를 시작하지 않습니다.")
-                return # 감시 스레드를 아예 시작하지 않음
-        
+                return
+                
         if self.monitoring_thread and self.monitoring_thread.is_alive():
             return
         
@@ -95,7 +94,7 @@ class AppController:
 
 def main():
     try:
-        image = Image.open("icon.png")
+        image = Image.open(resource_path("icon.png"))
     except (FileNotFoundError, OSError) as e:
         print(f"Error: icon.png 파일을 불러올 수 없습니다. ({e})")
         return

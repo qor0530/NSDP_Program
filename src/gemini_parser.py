@@ -3,7 +3,7 @@ import json
 
 # 1. API 키 설정
 # 아래 따옴표 안에 발급받은 본인의 API 키를 붙여넣으세요.
-API_KEY = "AIzaSyC8SoiZKT2QbnC4IJAGTXALtTQSKfl5M6Y"
+API_KEY = "api_key"
 
 genai.configure(api_key=API_KEY)
 model = genai.GenerativeModel('gemini-flash-latest')

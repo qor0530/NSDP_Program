@@ -1,4 +1,3 @@
-# utils.py
 import json
 import subprocess
 import os
@@ -8,21 +7,38 @@ import time
 import random
 import sys
 
-# ... (load_problems, load_config, save_config, judge_single_case 함수는 이전과 동일) ...
+def resource_path(relative_path):
+    """ Get absolute path to resource, works for dev and for PyInstaller """
+    try:
+        base_path = sys._MEIPASS
+    except Exception:
+        base_path = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+        
+    final_path = os.path.join(base_path, "resources", relative_path)
+    
+    # ▼▼▼ 디버깅을 위한 print 구문 추가 ▼▼▼
+    print(f"DEBUG: Accessing resource at -> {final_path}")
+    
+    return final_path
+
+# ... 이하 모든 함수는 이전과 동일합니다 ...
 def load_problems(filepath="problems.json"):
     try:
-        with open(filepath, "r", encoding="utf-8") as f:
+        with open(resource_path(filepath), "r", encoding="utf-8") as f:
             return json.load(f)
     except FileNotFoundError: return []
+
 def load_config(filepath="config.json"):
     try:
-        with open(filepath, "r", encoding="utf-8") as f:
+        with open(resource_path(filepath), "r", encoding="utf-8") as f:
             return json.load(f)
     except (FileNotFoundError, json.JSONDecodeError):
-        return {"unlock_condition": {"mode": "count", "value": 1}, "blocked_apps": [], "user_points": 0, "daily_unlock_enabled": True, "last_completion_date": "", "solve_history": []}
+        return {"unlock_condition": {"mode": "count", "value": 1}, "blocked_apps": [], "user_points": 0, 
+                "daily_unlock_enabled": True, "last_completion_date": "", "solve_history": [], "incorrect_history": []}
+
 def save_config(data, filepath="config.json"):
     try:
-        with open(filepath, "w", encoding="utf-8") as f:
+        with open(resource_path(filepath), "w", encoding="utf-8") as f:
             json.dump(data, f, indent=2, ensure_ascii=False)
     except Exception as e:
         print(f"설정 저장 중 오류 발생: {e}")
@@ -122,16 +138,3 @@ def load_config(filepath="config.json"):
         # ▼▼▼ 기본 설정에 incorrect_history 추가 ▼▼▼
         return {"unlock_condition": {"mode": "count", "value": 1}, "blocked_apps": [], "user_points": 0, 
                 "daily_unlock_enabled": True, "last_completion_date": "", "solve_history": [], "incorrect_history": []}
-
-
-def resource_path(relative_path):
-    """ Get absolute path to resource, works for dev and for PyInstaller """
-    # src 폴더 구조에 맞게 경로를 한 단계 위로 조정
-    try:
-        base_path = sys._MEIPASS
-    except Exception:
-        # 개발 환경에서는 현재 파일 위치의 부모 폴더(프로젝트 루트)를 기준으로 설정
-        base_path = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
-        
-    # resources 폴더 안의 파일을 찾도록 경로 조합
-    return os.path.join(base_path, "resources", relative_path)
