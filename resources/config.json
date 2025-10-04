@@ -1,0 +1,29 @@
+{
+  "unlock_condition": {
+    "mode": "count",
+    "value": 1
+  },
+  "blocked_apps": [],
+  "user_points": 14,
+  "daily_unlock_enabled": true,
+  "last_completion_date": "2025-10-04",
+  "solve_history": [
+    {
+      "id": 2739,
+      "stars": 2
+    },
+    {
+      "id": 8958,
+      "stars": 4
+    },
+    {
+      "id": 1000,
+      "stars": 1
+    },
+    {
+      "id": 2741,
+      "stars": 2
+    }
+  ],
+  "incorrect_history": []
+}

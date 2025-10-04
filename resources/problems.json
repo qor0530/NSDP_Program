@@ -1,0 +1,95 @@
+[
+  {
+    "id": 1000,
+    "title": "A+B",
+    "description": "두 정수 A와 B를 입력받은 다음, A+B를 출력하는 프로그램을 작성하시오.",
+    "hint": "기본 입출력",
+    "stars": 1,
+    "time_limit": 1,
+    "memory_limit": 128,
+    "testcases": [ { "input": "1 2", "output": "3" } ]
+  },
+  {
+    "id": 2739,
+    "title": "구구단",
+    "description": "N을 입력받은 뒤, 구구단 N단을 출력하는 프로그램을 작성하시오.",
+    "hint": "반복문",
+    "stars": 2,
+    "time_limit": 1,
+    "memory_limit": 128,
+    "testcases": [
+      { "input": "2", "output": "2 * 1 = 2\n2 * 2 = 4\n2 * 3 = 6\n2 * 4 = 8\n2 * 5 = 10\n2 * 6 = 12\n2 * 7 = 14\n2 * 8 = 16\n2 * 9 = 18" }
+    ]
+  },
+  {
+    "id": 8958,
+    "title": "OX퀴즈",
+    "description": "\"OOXXOXXOOO\"와 같은 OX퀴즈의 결과가 있다. O는 문제를 맞은 것이고, X는 문제를 틀린 것이다. 문제를 맞은 경우 그 문제의 점수는 그 문제까지 연속된 O의 개수가 된다. \"OOXXOXXOOO\"의 점수는 1+2+0+0+1+0+0+1+2+3 = 10점이다. OX퀴즈의 결과가 주어졌을 때, 점수를 구하는 프로그램을 작성하시오.",
+    "hint": "문자열, 반복문",
+    "stars": 4,
+    "time_limit": 2,
+    "memory_limit": 256,
+    "testcases": [
+      { "input": "5\nOOXXOXXOOO\nOOXXOOXXOO\nOXOXOXOXOXOXOX\nOOOOOOOOOO\nOOOOXOOOOXOOOOX", "output": "10\n9\n7\n55\n30" }
+    ]
+  },
+  {
+    "id": 10950,
+    "title": "A+B - 3",
+    "description": "두 정수 A와 B를 입력받은 다음, A+B를 출력하는 프로그램을 작성하시오. 테스트 케이스 개수 T가 첫 줄에 주어집니다.",
+    "hint": "반복문, 입출력",
+    "stars": 2,
+    "time_limit": 1,
+    "memory_limit": 256,
+    "testcases": [
+      { "input": "5\n1 1\n2 3\n3 4\n9 8\n5 2", "output": "2\n5\n7\n17\n7" }
+    ]
+  },
+  {
+    "id": 2741,
+    "title": "N 찍기",
+    "description": "자연수 N이 주어졌을 때, 1부터 N까지 한 줄에 하나씩 출력하는 프로그램을 작성하시오.",
+    "hint": "반복문",
+    "stars": 2,
+    "time_limit": 1,
+    "memory_limit": 128,
+    "testcases": [
+      { "input": "5", "output": "1\n2\n3\n4\n5" }
+    ]
+  },
+  {
+  "id": 5000,
+  "title": "연도 진행바",
+  "description": "문빙이는 이번 해가 얼마나 지났는지를 보여주는 '연도 진행바' 어플리케이션을 만들고자 한다. 오늘 날짜(Month DD, YYYY HH:MM 형식)가  주어졌을 때, 현재 연도가 몇 % 지났는지 출력하는 프로그램을 작성하시오. 윤 년 여부를 정확히 판단해야 하며, 계산 결과의 절대/상대 오차는 10^-9까지 허 용된다. (윤년 조건: 그 해가 400으로 나누어 떨어지거나, 4로 나누어 떨어지면서 100으로 나누어 떨어지지 않는 해)",
+  "hint": "날짜 계산",
+  "stars": 4,
+  "time_limit": 2,
+  "memory_limit": 128,
+  "testcases": [
+    {
+      "input": "May 10, 1981 00:31",
+      "output": "35.348363774733635"
+    },
+    {
+      "input": "January 01, 2008 00:00",
+      "output": "0.0"
+    },
+    {
+      "input": "December 31, 2007 23:59",
+      "output": "99.99980974124807"
+    },
+    {
+      "input": "July 02, 2007 12:00",
+      "output": "50.0"
+    },
+    {
+      "input": "July 02, 2008 00:00",
+      "output": "50.0"
+    },
+    {
+      "input": "January 31, 1900 00:47",
+      "output": "8.228120243531203"
+    }
+  ]
+}
+]
