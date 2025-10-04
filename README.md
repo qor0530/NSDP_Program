@@ -18,7 +18,7 @@
 
 **Not Solve, Don't Play (NSDP)** 는 게임이나 SNS 등 방해되는 프로그램의 실행을 차단하고, 대신 코딩 문제를 제시하여 사용자의 생산성과 학습을 동시에 돕는 애플리케이션입니다.
 
-![NSDP 잠금 화면 스크린샷](https://raw.githubusercontent.com/USER/REPO/main/screenshot.png)
+![NSDP 잠금 화면 스크린샷](https://raw.githubusercontent.com/qor0530/NSDP_Program/main/screenshot.png)
 
 ### ✨ 주요 기능
 
