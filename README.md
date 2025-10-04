@@ -35,10 +35,10 @@
 
 코드를 직접 설치할 필요 없이, 아래 방법으로 프로그램을 바로 사용할 수 있습니다.
 
-1.  **[Releases 페이지](https://github.com/qor0530/NSDP_Program/releases)**로 이동합니다.
+1.  **[Releases 페이지](https://github.com/qor0530/NSDP_Program/releases)** 로 이동합니다.
 2.  가장 최신 버전(Latest)의 'Assets' 항목에서 **`NotSolveDontPlay.exe`** 파일을 다운로드합니다.
 3.  다운로드한 `.exe` 파일을 더블클릭하여 실행합니다.
-    * **경고**: Windows SmartScreen 경고가 나타날 수 있습니다. 이는 서명되지 않은 실행 파일에 대한 일반적인 경고입니다. **'추가 정보' -> '실행'**을 눌러 프로그램을 시작할 수 있습니다.
+    * **경고**: Windows SmartScreen 경고가 나타날 수 있습니다. 이는 서명되지 않은 실행 파일에 대한 일반적인 경고입니다. **'추가 정보' -> '실행'** 을 눌러 프로그램을 시작할 수 있습니다.
 
 ---
 
