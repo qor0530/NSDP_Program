@@ -64,7 +64,7 @@
 
 1.  **리포지토리 복제**
     ```sh
-    git clone [https://github.com/YOUR_USERNAME/YOUR_REPOSITORY.git](https://github.com/YOUR_USERNAME/YOUR_REPOSITORY.git)
+    git clone [https://github.com/qor0530/NSDP_Program.git](https://github.com/YOUR_USERNAME/YOUR_REPOSITORY.git)
     cd YOUR_REPOSITORY
     ```
 2.  **가상 환경 생성 및 활성화**
